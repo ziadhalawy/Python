@@ -1,0 +1,15 @@
+pyy.py
+
+def sleep( sleeper=0):
+        
+        
+        if sleeper == 7:
+          return  self.mood == f"{self.name} is happy"
+        elif 0 <= sleeper > 7:    
+            return self.mood == f"{self.name} is tired"
+        elif  24 > sleeper > 7:    
+            return self.mood == f"{self.name} is lazy"
+        elif  24 < sleeper :    
+            return self.mood == f"{self.name} is in comma or dead :)"
+        else:
+            print("invalid")

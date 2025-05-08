@@ -1,0 +1,10 @@
+{
+    "code-runner.runInTerminal": true,
+    "code-runner.focusOnTerminal": true,
+    "code-runner.executorMap": {
+        "python": "python -u"
+    },
+    "terminal.integrated.focusAfterRun": true,
+    "python.defaultInterpreterPath": "Code Runner",
+    
+}
