@@ -1,11 +1,11 @@
-import Person
-import Car
+from Person import Person
+from Car import Car
 
 class Employees(Person):
     def __init__(self, id, car, email, salary, distanceToWork, name, money, mood, healthRate):
-        super().__init__(name, money, mood, healthRate)
+        super().__init__(name, money, mood, healthRate)  
         self.id = id
-        self.car = car  # An instance of the Car class
+        self.car = car  
         self.email = email
         self.salary = salary
         self.distanceToWork = distanceToWork
@@ -14,38 +14,22 @@ class Employees(Person):
         if self.car.velocity <= 0:
             return "The car's velocity must be greater than zero."
         
-        time = distance / self.car.velocity
-        return f"{self.name} will take {time} hours to drive {distance} km using the {self.car.make}  at {self.car.velocity} km/h."
+        time = distance / self.car.velocity 
+        return f"{self.name} will take {time * 60 } min to drive {distance} km using the {self.car.model} at {self.car.velocity} km/h."
 
+    def work(self, hours):
 
-
-toyota = Car("Toyota", "Corolla", 60)
-
-john = Employees(
-    id=101,
-    car=toyota,
-    email="john.doe@example.com",
-    salary=5000,
-    distanceToWork=20,
-    name="John",
-    money=2000,
-    mood="Happy",
-    healthRate=90,
-)
-
-
-
-print(john.drive(180))  
-
-
-
-
-"""    def work(self):
-        pass
+        self.salary += hours * 20  
+        return f"{self.name} has worked for {hours} hours and earned {hours * 20} more. New salary: {self.salary}."
 
     def refuel(self):
-        pass
+        if self.car.fuel_rate < 100:
+            fuel_needed = 100 - self.car.fuel_rate  
+            self.car.fuel_rate = 100  
+            self.money -= fuel_needed * 0.5  
+            return f"{self.name} refueled the car. The car is now at full fuel. Remaining money: {self.money}."
+        else:
+            return f"{self.name}'s car is already full on fuel."
 
     def send_mail(self):
-        pass
-"""
+        return f"Email sent to {self.email}. Subject: 'Work Update'."
